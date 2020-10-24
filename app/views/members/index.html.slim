@@ -1,6 +1,6 @@
 h1 Member List
 
-table
+table#member-table
   thead
     tr
       td Member ID
@@ -14,3 +14,8 @@ table
         td = member.famil_name
         td = member.given_name
         td = member.birthdate.strftime('%d %B %Y')
+
+javascript:
+  document.addEventListener('turbolinks:load', function() {
+    $('#member-table').DataTable();
+  });
