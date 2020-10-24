@@ -1,0 +1,16 @@
+h1 Member List
+
+table
+  thead
+    tr
+      td Member ID
+      td Family Name
+      td Given Name
+      td Birth Day
+  tbody
+    - @members.each do |member|
+      tr
+        td = member.id
+        td = member.famil_name
+        td = member.given_name
+        td = member.birthdate.strftime('%d %B %Y')
