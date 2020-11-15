@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## DataTables Example
 
-Things you may want to cover:
+This is an example for integrating DataTables.net into a Rails 6 project with Webpacker.
 
-* Ruby version
+## To Run
 
-* System dependencies
+0. You need Yarn and Ruby 2.7 installed.
+1. Run
 
-* Configuration
+```
+bundle install
+yarn install
 
-* Database creation
+rails db:create db:migrate
+rails s
+```
 
-* Database initialization
+2. Get some dummy datas
 
-* How to run the test suite
+```
+rails c
+FactoryBot.create_list :member, 10
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Head to `localhost:3000` to see the table in work.
 
-* Deployment instructions
+## Files of interest
 
-* ...
+1. config/webpack/loaders/jquery.js
+2. config/webpack/loaders/datatables.js
+3. config/webpack/environment.js
+4. app/javascript/packs/application.js
